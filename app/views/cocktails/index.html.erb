@@ -1,0 +1,18 @@
+
+
+<div class="container">
+
+  <h1>Cocktails @ Boobatch</h1>
+
+  <div id="cocktails-list">
+    <% @cocktails.each do |cocktail| %>
+      <p><%= cocktail.name.downcase %>
+      <%= link_to "[ show ]", cocktail_path(cocktail) %>
+    <% end  %>
+  </div>
+
+  <div id="cocktails-actions">
+  <p><%= link_to "[ add a new cocktail ]", new_cocktail_path %></p>
+  </div>
+
+</div>
