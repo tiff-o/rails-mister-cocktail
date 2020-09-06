@@ -1,22 +1,26 @@
-<h1><%= @cocktail.name.downcase %></h1>
+<div class="container">
 
-<div class="dose-info"></div>
+  <h1><%= @cocktail.name.downcase %></h1>
 
-<h3>ingredients</h3>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li><p><%= dose.description.downcase %> of
-      <%= dose.ingredient.name.downcase %>
-        <% if @cocktail.doses  %>
-          <%= link_to '[ delete ]', dose_path(dose), method: :delete, data: { confirm: 'are you sure?', class: 'dose-delete-link' } %></p>
+  <div class="dose-info">
 
-        <% end  %></li>
-    <% end  %>
-  </ul>
-</div>
+  <h3>ingredients</h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><p><%= dose.description.downcase %> of
+        <%= dose.ingredient.name.downcase %>
+          <% if @cocktail.doses  %>
+            <%= link_to '[ delete ]', dose_path(dose), method: :delete, data: { confirm: 'are you sure?', class: 'dose-delete-link' } %></p>
 
-<div class="dose-actions">
-  <p><%= link_to 'add dose', new_cocktail_dose_path(@cocktail) %></p>
+          <% end  %></li>
+      <% end  %>
+    </ul>
+  </div>
 
-  <p><%= link_to 'back to cocktail list', cocktails_path %></p>
+  <div id="dose-actions">
+    <p><%= link_to '[ add dose ]', new_cocktail_dose_path(@cocktail) %></p>
+
+    <p><%= link_to '[ back to cocktail list ]', cocktails_path %></p>
+  </div>
+
 </div>

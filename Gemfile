@@ -53,3 +53,4 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'simple_form'
 gem 'faker'
+gem 'dotenv-rails', groups: [:development, :test]
