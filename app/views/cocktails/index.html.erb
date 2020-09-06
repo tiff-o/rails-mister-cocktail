@@ -8,6 +8,15 @@
     <% @cocktails.each do |cocktail| %>
       <p><%= cocktail.name.downcase %>
       <%= link_to "[ show ]", cocktail_path(cocktail) %>
+        <% if cocktail.photo.attached? %>
+
+          <p><%= cl_image_tag cocktail.photo.key, height: 100, width: 100, crop: :fill %></p>
+
+        <% else %>
+
+          <p><img class = "default-img-thumb" src="https://i.pinimg.com/600x315/05/2a/74/052a7458e0846da55184b6eaede6138b.jpg", height: 100, width: 100, crop: :fill></p>
+        <% end  %>
+
     <% end  %>
   </div>
 

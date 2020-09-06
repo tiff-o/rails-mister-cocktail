@@ -2,6 +2,17 @@
 
   <h1><%= @cocktail.name.downcase %></h1>
 
+  <%# <%= cl_image_tag("qwwdisqcwci1l7tfzda1",
+      width: 400, height: 300, crop: :fill) %>
+  <% if @cocktail.photo.attached? %>
+
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 300, crop: :fill %>
+
+  <% else %>
+
+    <img class = "default-img-full" src="https://i.pinimg.com/600x315/05/2a/74/052a7458e0846da55184b6eaede6138b.jpg", height: 300, width: 300, crop: :fill>
+  <% end  %>
+
   <div class="dose-info">
 
   <h3>ingredients</h3>
